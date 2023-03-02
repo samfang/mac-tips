@@ -1,0 +1,22 @@
+set res to 1
+set monitor to 2
+tell application "System Preferences"
+    activate
+    set the current pane to pane id "com.apple.preference.displays"
+    delay 2
+    tell application "System Events"
+        tell window "Displays" of application process "System Preferences"
+            click button "Display Settings…"
+            delay 2
+            click row monitor of outline 1 of scroll area 1 of sheet 1
+            click radio button "Scaled" of radio group 1 of sheet 1
+            delay 0.1
+            tell table 1 of scroll area 2 of sheet 1
+                select row 1
+                delay 5
+                select row 3
+                delay 5
+                select row 2
+        end tell
+    end tell
+end tell
